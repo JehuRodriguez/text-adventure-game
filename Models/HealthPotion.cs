@@ -8,7 +8,7 @@ using TextAdventureGame.Interfaces;
 
 namespace TextAdventureGame.Models
 {
-    public class HealthPotion : IItem
+    public class HealthPotion : IITEM
     {
 
         public int HealAmount { get; set; }
