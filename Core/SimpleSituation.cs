@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TextAdventureGame.Models;
 
 
+
 namespace TextAdventureGame.Core
 {
     public class SimpleSituation : Situation
@@ -18,11 +19,11 @@ namespace TextAdventureGame.Core
 
             for (int i = 0; i < Choices.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. {Choices[i].Text}");
+                Console.WriteLine($"{i + 1}. {Choices[i].Description}");
             }
 
             int option = int.Parse(Console.ReadLine());
-            Choices[option - 1].Result(player);
+            Choices[option - 1].Execute(player);
         }
     }
 }

@@ -6,24 +6,21 @@ using System.Threading.Tasks;
 using TextAdventureGame.Models;
 using TextAdventureGame.Interfaces;
 
-
 namespace TextAdventureGame.Core
 {
-    public class Choice
+    public class IncreaseDamageAction : IChoiceAction
     {
-        public string Description { get; set; }
-        private IChoiceAction action;
+        private int amount;
 
-        public Choice(string description, IChoiceAction action)
+        public IncreaseDamageAction(int amount)
         {
-            Description = description;
-            this.action = action;
+            this.amount = amount;
         }
 
         public void Execute(Player player)
         {
-            action.Execute(player);
+            player.Damage += amount;
+            Console.WriteLine($"Tu daño aumenta (+{amount})");
         }
-
     }
 }

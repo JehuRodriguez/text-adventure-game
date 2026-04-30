@@ -6,24 +6,25 @@ using System.Threading.Tasks;
 using TextAdventureGame.Models;
 using TextAdventureGame.Interfaces;
 
-
 namespace TextAdventureGame.Core
 {
-    public class Choice
+    public class HealAction : IChoiceAction
     {
-        public string Description { get; set; }
-        private IChoiceAction action;
+        private int amount;
 
-        public Choice(string description, IChoiceAction action)
+        public HealAction(int amount)
         {
-            Description = description;
-            this.action = action;
+            this.amount = amount;
         }
 
         public void Execute(Player player)
         {
-            action.Execute(player);
+            player.Heal(amount);
+            Console.WriteLine($"Te curas (+{amount} HP)");
         }
+
+
+
 
     }
 }

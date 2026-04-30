@@ -9,21 +9,19 @@ using TextAdventureGame.Interfaces;
 
 namespace TextAdventureGame.Core
 {
-    public class Choice
+    public class DamageAction : IChoiceAction
     {
-        public string Description { get; set; }
-        private IChoiceAction action;
+        private int damage;
 
-        public Choice(string description, IChoiceAction action)
+        public DamageAction(int damage)
         {
-            Description = description;
-            this.action = action;
+            this.damage = damage;
         }
 
         public void Execute(Player player)
         {
-            action.Execute(player);
+            player.TakeDamage(damage);
+            Console.WriteLine($"Recibes daño (-{damage} HP)");
         }
-
     }
 }
