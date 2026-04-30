@@ -43,11 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Choice.cs" />
+    <Compile Include="Core\SimpleSituation.cs" />
+    <Compile Include="Core\Situation.cs" />
+    <Compile Include="Interfaces\IItem.cs" />
+    <Compile Include="Models\Enemy.cs" />
+    <Compile Include="Models\HealthPotion.cs" />
+    <Compile Include="Models\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Systems\Game.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

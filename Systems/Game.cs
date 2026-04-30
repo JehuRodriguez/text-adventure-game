@@ -56,6 +56,12 @@ namespace TextAdventureGame.Systems
 
             situations.Add(s1);
 
+            var enemy = new Enemy("Goblin", 40, 8);
+
+            var combat = new CombatSituation("Un goblin aparece!", enemy);
+
+            situations.Add(combat);
+
         }
 
         private void EndGame()
